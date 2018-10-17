@@ -18,7 +18,8 @@
     "start": "skpm-build --watch --run",
     "postinstall": "npm run build && skpm-link",
     "lint": "itp-react-scripts lint",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "format": "itp-react-scripts format src/*/** --write"
   },
   "devDependencies": {
     "@inthepocket/itp-react-scripts": "^0.47.1",
