@@ -4,7 +4,7 @@
   "icon": "icon.png",
   "commands": [
     {
-      "name": "my-command",
+      "name": "Export to Sketchxport",
       "identifier": "my-command-identifier",
       "script": "./my-command.js"
     }
