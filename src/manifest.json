@@ -10,7 +10,7 @@
     }
   ],
   "menu": {
-    "title": "itp-sketchxport-plugin",
+    "title": "sketchxport-plugin",
     "items": [
       "sketchxport-identifier"
     ]

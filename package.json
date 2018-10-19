@@ -1,13 +1,13 @@
 {
-  "name": "itp-sketchxport-plugin",
+  "name": "sketchxport-plugin",
   "version": "0.1.0",
   "engines": {
     "sketch": ">=3.0"
   },
   "skpm": {
-    "name": "itp-sketchxport-plugin",
+    "name": "sketchxport-plugin",
     "manifest": "src/manifest.json",
-    "main": "itp-sketchxport-plugin.sketchplugin",
+    "main": "sketchxport-plugin.sketchplugin",
     "assets": [
       "assets/**/*"
     ]
