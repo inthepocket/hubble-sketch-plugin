@@ -5,14 +5,14 @@
   "commands": [
     {
       "name": "Export to Sketchxport",
-      "identifier": "my-command-identifier",
-      "script": "./my-command.js"
+      "identifier": "sketchxport-identifier",
+      "script": "./sketchxport.js"
     }
   ],
   "menu": {
     "title": "itp-sketchxport-plugin",
     "items": [
-      "my-command-identifier"
+      "sketchxport-identifier"
     ]
   }
 }
