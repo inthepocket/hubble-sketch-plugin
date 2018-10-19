@@ -28,7 +28,10 @@
     "@skpm/test-runner": "^0.3.3",
     "eslint": "^5.7.0"
   },
-  "author": "Jonathan Dierckens <jonathan.dierckens@inthepocket.mobi>",
+  "contributors": [
+    "Jonathan Dierckens <jonathan.dierckens@inthepocket.mobi>",
+    "Thibault Maekelbergh <thibault.maekelbergh@icloud.com>"
+  ],
   "dependencies": {
     "@skpm/child_process": "^0.2.4",
     "camelcase": "^5.0.0",

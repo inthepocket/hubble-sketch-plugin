@@ -1,3 +1,30 @@
+<p align="center">
+  <h1 align="center">💎 sketchxport-plugin</h1>
+
+  <p align="center">
+    <a href='./LICENSE'>
+      <img src="https://badgen.net/badge/license/MIT/blue" alt="MIT License">
+    </a>
+    <img src="https://badgen.net/badge/platform/macOS?icon=apple" alt="" />
+    <a href="https://github.com/inthepocket/sketchxport-plugin/releases">
+      <img src="https://badgen.net/github/releases/inthepocket/sketchxport-plugin" />
+    </a>
+    <img src="https://badgen.net/github/last-commit/inthepocket/sketchxport-plugin" />
+  </p>
+
+<p align="center">
+    Export configuration data like colors, fonts & text styles out of sketch to a universally parseable JSON format.<br/>
+    This repository is an attempt to further automate design systems & tooling at In The Pocket.<br/>
+    <br/>
+    Assets can also be exported as platform-friendly PNG & SVG formats.
+    [👷‍♀️UNDER CONSTRUCTION👷‍♂️]
+  </p>
+</p>
+
+# Prerequisites
+
+- macOS with Sketch 41+
+
 # sketchxport-plugin
 
 _This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
