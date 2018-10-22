@@ -1,16 +1,33 @@
-import {toArray} from 'sketch-utils';
+import sketchDOM from 'sketch/dom';
+import { sketchAlert } from '../utils/sketchConfig';
+import playSound from '../utils/playSystemSound';
 
-function findExports (context) {
-    // find all exported SVGs
-    const exportRequests = toArray (context.actionContext.exports);
-    const svgPaths = exportRequests
-      // .filter(currentExport => currentExport.request.format() == 'svg')
-      .map (currentExport => String (currentExport.path));
-  
-    debug ('---paths', svgPaths, '\n');
-  }
-  
+const exportAsPNG = (page, options) => {
+  sketchDOM.export(page, {
+    scales: '1, 2, 3',
+    formats: 'png',
+    output: '~/Desktop/sketchxport-output/png',
+    overwriting: true,
+    "save-for-web": true,
+    ...options,
+  });
+}
 
-export default function generateAssets(context) {
-    //findExports();
+const exportAsSVG = (page, options) => {
+  sketchDOM.export(page, {
+    formats: 'svg',
+    output: '~/Desktop/sketchxport-output/svg',
+    overwriting: true,
+    compact: true,
+    "include-namespaces": false,
+    ...options,
+  })
+}
+
+export default function generateAssets(doc) {
+  exportAsPNG(doc);
+  exportAsSVG(doc);
+
+  sketchAlert('Assets exported to');
+  return playSound('Glass');
 }
