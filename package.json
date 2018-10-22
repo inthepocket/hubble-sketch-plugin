@@ -20,7 +20,8 @@
     "lint": "itp-react-scripts lint",
     "lint:fix": "npm run lint -- --fix",
     "format": "itp-react-scripts format src/*/** --write",
-    "test": "skpm-test"
+    "test": "skpm-test",
+    "log": "skpm log -f"
   },
   "devDependencies": {
     "@inthepocket/itp-react-scripts": "^0.47.1",
