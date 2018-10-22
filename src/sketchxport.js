@@ -14,7 +14,7 @@ const debugConfig = {
 export default function (context) {
   startOfPlugin(true);
 
-  const { doc, primitivesPage } = sketchConfig(context);
+  const { doc, primitivesPage, assetOutPutDir } = sketchConfig(context);
 
   try {
     sketchAlert('Aaight, we catch your drift and start exporting. 🙌');
@@ -27,7 +27,7 @@ export default function (context) {
     }
 
     generateConfig(doc);
-    generateAssets(primitivesPage);
+    generateAssets(primitivesPage, assetOutPutDir);
 
     if (debugConfig.withSuccessSound) playSystemSound('Glass');
 

@@ -9,5 +9,9 @@ export default (context) => ({
 
   get primitivesPage() {
     return this.doc.pages.filter(page => page.name === 'primitives')
+  },
+
+  get assetOutPutDir() {
+    return '~/Desktop/sketchxport-output/svg';
   }
 })

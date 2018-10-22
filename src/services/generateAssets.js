@@ -2,21 +2,21 @@ import sketchDOM from 'sketch/dom';
 import { sketchAlert } from '../utils/sketchConfig';
 import playSound from '../utils/playSystemSound';
 
-const exportAsPNG = (page, options) => {
+const exportAsPNG = (page, outputDir, options) => {
   sketchDOM.export(page, {
     scales: '1, 2, 3',
     formats: 'png',
-    output: '~/Desktop/sketchxport-output/png',
+    output: outputDir,
     overwriting: true,
     "save-for-web": true,
     ...options,
   });
 }
 
-const exportAsSVG = (page, options) => {
+const exportAsSVG = (page, outputDir, options) => {
   sketchDOM.export(page, {
     formats: 'svg',
-    output: '~/Desktop/sketchxport-output/svg',
+    output: outputDir,
     overwriting: true,
     compact: true,
     "include-namespaces": false,
@@ -24,9 +24,9 @@ const exportAsSVG = (page, options) => {
   })
 }
 
-export default function generateAssets(doc) {
-  exportAsPNG(doc);
-  exportAsSVG(doc);
+export default function generateAssets(doc, assetOutPutDir) {
+  exportAsPNG(doc, assetOutPutDir);
+  exportAsSVG(doc, assetOutPutDir);
 
   sketchAlert('Assets exported to');
   return playSound('Glass');
