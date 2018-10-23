@@ -1,4 +1,6 @@
 import sketchDOM from 'sketch/dom';
+import { execSync } from '@skpm/child_process';
+
 import { sketchAlert } from '../utils/sketchConfig';
 import playSound from '../utils/playSystemSound';
 
@@ -28,6 +30,8 @@ export default function generateAssets(doc, assetOutPutDir) {
   exportAsPNG(doc, assetOutPutDir);
   exportAsSVG(doc, assetOutPutDir);
 
-  sketchAlert('Assets exported to');
+  execSync(`/usr/bin/zip -r ${assetOutPutDir}/sketchxport-upload_bundle.zip ${assetOutPutDir}`)
+
+  sketchAlert(`Assets exported to ${assetOutPutDir}`);
   return playSound('Glass');
 }

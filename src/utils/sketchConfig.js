@@ -8,10 +8,10 @@ export default (context) => ({
   },
 
   get primitivesPage() {
-    return this.doc.pages.filter(page => page.name === 'primitives')
+    return this.doc.pages.filter(page => page.name === 'primitives').filter(Boolean)[0]
   },
 
   get assetOutPutDir() {
-    return '~/Desktop/sketchxport-output/svg';
+    return '~/Desktop/sketchxport-output';
   }
 })
