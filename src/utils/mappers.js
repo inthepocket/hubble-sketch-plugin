@@ -3,43 +3,41 @@ import colorNamer from 'color-namer';
 import camelcase from 'camelcase';
 
 export const convertHexToColorObject = hex => {
-  const rgb = colorConvert.hex
-    .rgb (hex)
-    .reduce ((rgbObject, rgbColor, currentIndex) => {
-      switch (currentIndex) {
-        case 0:
-          return {
-            ...rgbObject,
-            red: rgbColor,
-          };
-        case 1:
-          return {
-            ...rgbObject,
-            green: rgbColor,
-          };
-        case 2:
-          return {
-            ...rgbObject,
-            blue: rgbColor,
-          };
-        default:
-          return rgbObject;
-      }
-    }, {});
+  const rgb = colorConvert.hex.rgb(hex).reduce((rgbObject, rgbColor, currentIndex) => {
+    switch (currentIndex) {
+      case 0:
+        return {
+          ...rgbObject,
+          red: rgbColor,
+        };
+      case 1:
+        return {
+          ...rgbObject,
+          green: rgbColor,
+        };
+      case 2:
+        return {
+          ...rgbObject,
+          blue: rgbColor,
+        };
+      default:
+        return rgbObject;
+    }
+  }, {});
 
   return {
     hex,
-    rgb: Object.values (rgb),
-    hsl: colorConvert.rgb.hsl (Object.values (rgb)),
+    rgb: Object.values(rgb),
+    hsl: colorConvert.rgb.hsl(Object.values(rgb)),
     red: rgb.red,
     green: rgb.green,
     blue: rgb.blue,
-    name: camelcase (colorNamer ([rgb.red, rgb.green, rgb.blue]).ntc[0].name),
+    name: camelcase(colorNamer([rgb.red, rgb.green, rgb.blue]).ntc[0].name),
   };
 };
 
-export const mapTextStyles = textStyles => 
-   textStyles.objects.map (stl => {
+export const mapTextStyles = textStyles =>
+  textStyles.objects.map(stl => {
     const attrs = stl.value.textStyle.encodedAttributes;
 
     return {
@@ -51,5 +49,4 @@ export const mapTextStyles = textStyles =>
       //   color: formatColor (attrs.MSAttributedStringColorAttribute),
       kerning: attrs.kerning || null,
     };
-  })
-;
+  });
