@@ -1,4 +1,7 @@
+import {debug} from './debug';
+
 const PRIMITIVES_PAGE_NAME = 'primitives';
+const TEXT_STYLE_ARTBOARD_NAME = 'textstyle';
 const COLOR_ARTBOARD_NAME = 'primitives/color/';
 
 /**
@@ -13,15 +16,15 @@ export const getPageArrays = document =>
     sketchId: page.do_objectID,
   }));
 
-  export const getPrimitivesPage = doc => {
-    const primitivesPage = getPageArrays (doc).find (
-        i => i.name === PRIMITIVES_PAGE_NAME
-      );
-      if (!primitivesPage) {
-        throw new Error (`No pages with the name ${PRIMITIVES_PAGE_NAME} `);
-      }
-      return primitivesPage;
+export const getPrimitivesPage = doc => {
+  const primitivesPage = getPageArrays (doc).find (
+    i => i.name === PRIMITIVES_PAGE_NAME
+  );
+  if (!primitivesPage) {
+    throw new Error (`No pages with the name ${PRIMITIVES_PAGE_NAME} `);
   }
+  return primitivesPage;
+};
 /**
  * Get the color id from a valid color artboard name
  * @param {string} artboardName
@@ -49,24 +52,34 @@ export const getColorId = artboardName => {
   };
 };
 
-/**
- * Get a color type (like document colors) from artboards named 'primitives/colors/<color>'
- * @param {Array<Object>} layers layers from sketch2json output
- */
-export const getColorsFromArtboard = layers =>
-  layers
-    .filter (layer => layer.name.startsWith (COLOR_ARTBOARD_NAME))
-    .map (layer => {
-      // console.log('[sketchxport-plugin] 💎', 'layer', layer)
-      const [colorArtboard] = layer.layers.map (color => {
-        const [colors] = color.style.fills
-          .map (fill => fill && fill.color)
-          .filter (Boolean);
-        return colors;
-      });
+const getColorsFromLayer = layer => {
+  const hex = layer.layers
+    .map (color => {
+      const [colors] = color.style.fills
+        .map (fill => fill && fill.color)
+        .filter (Boolean);
+      return colors;
+    })
+    .find (Boolean);
+  return {
+    hex,
+    ...getColorId (layer.name),
+  };
+};
 
-      return {
-        hex: colorArtboard,
-        ...getColorId (layer.name),
-      };
-    });
+const getTextStyleFromLayer = layer => layer
+
+export const bundleArtboardsPerType = layers =>
+  layers.reduce (
+    (artboardsPerType, layer) => {
+      if (layer.name.startsWith (COLOR_ARTBOARD_NAME)) {
+        artboardsPerType.colors.push (getColorsFromLayer (layer));
+      } else if (layer.name.startsWith (TEXT_STYLE_ARTBOARD_NAME)) {
+        artboardsPerType.textStyles.push (getTextStyleFromLayer(layer));
+      } else {
+        artboardsPerType.others.push (layer);
+      }
+      return artboardsPerType;
+    },
+    {colors: [], textStyles: [], others: []}
+  );

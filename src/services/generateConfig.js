@@ -1,18 +1,18 @@
-import {getPrimitivesPage, getColorsFromArtboard} from '../utils/sketch';
+import {getPrimitivesPage, bundleArtboardsPerType} from '../utils/sketch';
 import {convertHexToColorObject} from '../utils/mappers';
-import {debug } from '../utils/debug';
+import { debug } from '../utils/debug';
 
 export default function generateConfig(doc) {
     const primitivesPage = getPrimitivesPage(doc);
 
-    // debug('textStyle', textStyle);
+    const { colors, textStyles, others} = bundleArtboardsPerType(primitivesPage.layers);
 
-    const colorLayers = getColorsFromArtboard (primitivesPage.layers);
-    // debug(colorLayers);
+    debug("do something with textStyles", textStyles);
+    debug("do something with others", others);
 
     const result = {
-      // textStyles: mapTextStyles(response.document.layerTextStyles),
-      colors: colorLayers.map (color => ({
+      // textStyles: mapTextStyles(textStyles),
+      colors: colors.map (color => ({
         ...color,
         ...convertHexToColorObject (color.hex),
       })),
@@ -20,7 +20,7 @@ export default function generateConfig(doc) {
       // sketchVersion: response.meta.appVersion,
     };
 
-    debug ('generatedConfig', result, '\n');
+    // debug ('generatedConfig', result, '\n');
 
     // doc.pages.map (page =>
 

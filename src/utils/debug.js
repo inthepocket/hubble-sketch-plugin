@@ -2,8 +2,13 @@ let isDebug = false;
 let startTime;
 
 export const debug = (...messages) => {
+  const debugMessages = ["[sketchxport-plugin] 💎"];
+  messages.forEach((message) => {
+    debugMessages.push(message);
+    debugMessages.push("💎")
+  })
     if(isDebug) {
-        console.log("[sketchxport-plugin] 💎", ...messages)
+        console.log(...debugMessages)
     }
 }
 

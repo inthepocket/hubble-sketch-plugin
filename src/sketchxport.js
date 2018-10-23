@@ -25,16 +25,18 @@ export default function (context) {
     const doc = sketch.fromNative (context.document);
 
     if (!doc && !doc.pages) {
+
       throw new Error ('The doc should have pages..');
     }
-    
+
+    // const sharedStyle = doc.getSharedTextStyles();
+
     generateConfig(doc);
     generateAssets(context);
 
     if (debugConfig.withSuccessSound) playSystemSound ('Glass');
 
     endOfPlugin();
-
   } catch (e) {
     console.error (
       '😿 😿 😿 😿 😿 😿 😿 😿 😿\n',
@@ -42,6 +44,7 @@ export default function (context) {
       '\n😿 😿 😿 😿 😿 😿 😿 😿 😿'
     );
     if (debugConfig.withFailureSound) playSystemSound ('Basso');
+    endOfPlugin();
     throw e;
   }
 }

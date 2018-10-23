@@ -38,8 +38,8 @@ export const convertHexToColorObject = hex => {
   };
 };
 
-export const mapTextStyles = textStyles =>
-  textStyles.objects.map (stl => {
+export const mapTextStyles = textStyles => 
+   textStyles.objects.map (stl => {
     const attrs = stl.value.textStyle.encodedAttributes;
 
     return {
@@ -48,7 +48,8 @@ export const mapTextStyles = textStyles =>
       size: attrs.MSAttributedStringFontAttribute.attributes.size,
       family: attrs.MSAttributedStringFontAttribute.attributes.name,
       borderBottom: attrs.underlineStyle || null,
-    //   color: formatColor (attrs.MSAttributedStringColorAttribute),
+      //   color: formatColor (attrs.MSAttributedStringColorAttribute),
       kerning: attrs.kerning || null,
     };
-  });
+  })
+;
