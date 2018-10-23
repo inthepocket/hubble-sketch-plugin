@@ -67,14 +67,18 @@ const getColorsFromLayer = layer => {
   };
 };
 
-const getTextStyleFromLayer = layer => layer
+const getTextStyleFromLayer = layer => {
+  debug('layer', layer);
+  
+  return layer.layers.filter(({type }) => type === 'Text');
+}
 
 export const bundleArtboardsPerType = layers =>
   layers.reduce (
-    (artboardsPerType, layer) => {
-      if (layer.name.startsWith (COLOR_ARTBOARD_NAME)) {
-        artboardsPerType.colors.push (getColorsFromLayer (layer));
-      } else if (layer.name.startsWith (TEXT_STYLE_ARTBOARD_NAME)) {
+      (artboardsPerType, layer) => {
+        if (layer.name.startsWith (COLOR_ARTBOARD_NAME)) {
+          artboardsPerType.colors.push (getColorsFromLayer (layer));
+        } else if (layer.name.startsWith (TEXT_STYLE_ARTBOARD_NAME)) {
         artboardsPerType.textStyles.push (getTextStyleFromLayer(layer));
       } else {
         artboardsPerType.others.push (layer);
@@ -82,4 +86,4 @@ export const bundleArtboardsPerType = layers =>
       return artboardsPerType;
     },
     {colors: [], textStyles: [], others: []}
-  );
+  )

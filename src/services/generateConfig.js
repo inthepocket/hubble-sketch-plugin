@@ -1,10 +1,8 @@
-import {getPrimitivesPage, bundleArtboardsPerType} from '../utils/sketch';
+import {bundleArtboardsPerType} from '../utils/sketch';
 import {convertHexToColorObject} from '../utils/mappers';
 import { debug } from '../utils/debug';
 
-export default function generateConfig(doc) {
-    const primitivesPage = getPrimitivesPage(doc);
-
+export default function generateConfig(primitivesPage) {
     const { colors, textStyles, others} = bundleArtboardsPerType(primitivesPage.layers);
 
     debug("do something with textStyles", textStyles);
