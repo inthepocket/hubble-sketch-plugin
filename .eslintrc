@@ -1,4 +1,9 @@
 {
-    "extends": "./node_modules/@inthepocket/itp-react-scripts/dist/config/eslintrc.js"
+  "extends": "./node_modules/@inthepocket/itp-react-scripts/dist/config/eslintrc.js",
+  "globals": {
+    "log": true
+  },
+  "rules": {
+    "import/no-unresolved": "off"
+  }
 }
-  

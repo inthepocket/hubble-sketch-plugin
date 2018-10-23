@@ -1,11 +1,9 @@
 // documentation: https://developer.sketchapp.com/reference/api/
-/* eslint-disable-next-line import/no-unresolved */
-import sketch from 'sketch';
-
-import {startOfPlugin, endOfPlugin } from './utils/debug';
+import { startOfPlugin, endOfPlugin } from './utils/debug';
 import generateConfig from './services/generateConfig';
 import generateAssets from './services/generateAssets';
 import playSystemSound from './utils/playSystemSound';
+import sketchConfig, { sketchAlert } from './utils/sketchConfig';
 
 const debugConfig = {
   debugEnabled: true,
@@ -16,32 +14,33 @@ const debugConfig = {
 export default function (context) {
   startOfPlugin(true);
 
-  try {
-    sketch.UI.message ('Aaight, we catch your drift and start exporting. 🙌');
-    if (!context) {
-      throw new Error ('Plugin should have context');
-    }
+  const { doc, primitivesPage, assetOutPutDir } = sketchConfig(context);
 
-    const doc = sketch.fromNative (context.document);
+  try {
+    sketchAlert('Aaight, we catch your drift and start exporting. 🙌');
+    if (!context) {
+      throw new Error('Plugin should have context');
+    }
 
     if (!doc && !doc.pages) {
-      throw new Error ('The doc should have pages..');
+      throw new Error('The doc should have pages..');
     }
-    
-    generateConfig(doc);
-    generateAssets(context);
 
-    if (debugConfig.withSuccessSound) playSystemSound ('Glass');
+    generateConfig(doc);
+    generateAssets(primitivesPage, assetOutPutDir);
+
+    if (debugConfig.withSuccessSound) playSystemSound('Glass');
 
     endOfPlugin();
 
   } catch (e) {
-    console.error (
-      '😿 😿 😿 😿 😿 😿 😿 😿 😿\n',
-      e,
-      '\n😿 😿 😿 😿 😿 😿 😿 😿 😿'
-    );
-    if (debugConfig.withFailureSound) playSystemSound ('Basso');
+    console.error (`
+      😿 😿 😿 😿 😿 😿 😿 😿 😿
+      ${e}
+      😿 😿 😿 😿 😿 😿 😿 😿 😿
+    `);
+
+    if (debugConfig.withFailureSound) playSystemSound('Basso');
     throw e;
   }
 }
