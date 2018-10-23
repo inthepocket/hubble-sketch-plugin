@@ -4,11 +4,13 @@ import generateConfig from './services/generateConfig';
 import generateAssets from './services/generateAssets';
 import playSystemSound from './utils/playSystemSound';
 import sketchConfig, { sketchAlert } from './utils/sketchConfig';
+import { uploadToGoogleCloud } from './services/uploadToCloud';
 
 const debugConfig = {
   debugEnabled: true,
+  enableExperimentalFeatures: false,
   withSuccessSound: true,
-  withFailureSound: true
+  withFailureSound: true,
 }
 
 export default function (context) {
@@ -28,6 +30,10 @@ export default function (context) {
 
     generateConfig(doc);
     generateAssets(primitivesPage, assetOutPutDir);
+
+    if (debugConfig.enableExperimentalFeatures) {
+      uploadToGoogleCloud(assetOutPutDir);
+    }
 
     if (debugConfig.withSuccessSound) playSystemSound('Glass');
 
