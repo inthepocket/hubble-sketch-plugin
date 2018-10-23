@@ -21,11 +21,23 @@
   </p>
 </p>
 
-# Prerequisites
+# 👉  Prerequisites
 
-- macOS with Sketch 41+
+- macOS with Sketch 42+
+- If you want to use the experimental upload to cloud feature, you'll need google-cloud-sdk (for gsutil) installed and authenticated
 
-# sketchxport-plugin
+## ☁️  Uploading assets to online storage/cloud
+
+There is functionality included to upload the generated assets from this plugin to a (cloud) storage provider.
+Currently this feature is behind a debug flag as it is still experimental and relies on specific env setup.
+
+By default it is disabled but you can enable it [in the debugConfig](https://github.com/inthepocket/sketchxport-plugin/blob/master/src/sketchxport.js#L9) by setting the `enableExperimentalFeatures` flag to true.
+
+The only supported provider for the moment is Google Cloud Storage and it relies on having the gsutil CLI installed and a project configured. The bucket name is configured as a param passed to the `uploadToGoogleCloud` function and will default to `sketchxport-plugin-output`.
+
+This feature is still under active development like the rest of this project and we will look for a more user friendly way to configure this.
+
+## 🛠  Development
 
 _This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
 
