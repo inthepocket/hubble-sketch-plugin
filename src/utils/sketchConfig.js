@@ -1,17 +1,22 @@
 import sketch from 'sketch';
 
 export const sketchAlert = message => sketch.UI.message(message);
+export const sketchPrompt = (message, defaultValue) => sketch.UI.getStringFromUser(message, defaultValue);
+export const sketchInput = (message, options) => sketch.UI.getSelectionFromUser(message, options);
 
 export default context => ({
   get doc() {
     return sketch.fromNative(context.document);
   },
 
-  get primitivesPage() {
-    return this.doc.pages.filter(page => page.name === 'primitives').find(Boolean);
+  get documentSetting() {
+    const val = sketch.Settings.documentSettingForKey(this.doc, this.documentSettingsKey);
+    return !val || val === 'null' ? false : val;
   },
 
-  get assetOutPutDir() {
-    return '~/Desktop/sketchxport-output/svg';
+  get filePath() {
+    return this.doc.path;
   },
+
+  documentSettingsKey: 'sketchxport-project-id',
 });
