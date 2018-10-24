@@ -20,7 +20,7 @@
     }
   ],
   "menu": {
-    "title": "sketchxport-plugin",
+    "title": "Sketchxport",
     "items": [
       "sketchxport-configure",
       "sketchxport-export",
