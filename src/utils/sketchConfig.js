@@ -9,9 +9,13 @@ export default context => ({
     return sketch.fromNative(context.document);
   },
 
-  get hasDocumentSetting() {
+  get documentSetting() {
     const val = sketch.Settings.documentSettingForKey(this.doc, this.documentSettingsKey);
     return !val || val === 'null' ? false : val;
+  },
+
+  get filePath() {
+    return this.doc.path;
   },
 
   documentSettingsKey: 'sketchxport-project-id',

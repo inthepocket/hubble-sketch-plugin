@@ -3,11 +3,11 @@ import Settings from 'sketch/settings';
 import sketchConfig, { sketchPrompt, sketchAlert } from './utils/sketchConfig';
 
 export default function(context) {
-  const { doc, documentSettingsKey, hasDocumentSetting } = sketchConfig(context);
+  const { doc, documentSettingsKey, documentSetting } = sketchConfig(context);
 
-  if (hasDocumentSetting) {
+  if (documentSetting) {
     return sketchAlert(
-      `This document was already successfully set up with project id: ${hasDocumentSetting}`,
+      `This document was already successfully set up with project id: ${documentSetting}`,
     );
   }
 
