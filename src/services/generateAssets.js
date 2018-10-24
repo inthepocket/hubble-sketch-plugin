@@ -8,10 +8,10 @@ const exportAsPNG = (page, outputDir, options) => {
     formats: 'png',
     output: outputDir,
     overwriting: true,
-    "save-for-web": true,
+    'save-for-web': true,
     ...options,
   });
-}
+};
 
 const exportAsSVG = (page, outputDir, options) => {
   sketchDOM.export(page, {
@@ -19,10 +19,10 @@ const exportAsSVG = (page, outputDir, options) => {
     output: outputDir,
     overwriting: true,
     compact: true,
-    "include-namespaces": false,
+    'include-namespaces': false,
     ...options,
-  })
-}
+  });
+};
 
 export default function generateAssets(doc, assetOutPutDir) {
   exportAsPNG(doc, assetOutPutDir);

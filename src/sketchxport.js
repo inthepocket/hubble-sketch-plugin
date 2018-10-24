@@ -8,10 +8,10 @@ import sketchConfig, { sketchAlert } from './utils/sketchConfig';
 const debugConfig = {
   debugEnabled: true,
   withSuccessSound: true,
-  withFailureSound: true
-}
+  withFailureSound: true,
+};
 
-export default function (context) {
+export default function(context) {
   startOfPlugin(true);
 
   const { doc, primitivesPage, assetOutPutDir } = sketchConfig(context);
@@ -26,19 +26,16 @@ export default function (context) {
       throw new Error('The doc should have pages..');
     }
 
-    generateConfig(doc);
+    // const sharedStyle = doc.getSharedTextStyles();
+
+    generateConfig(primitivesPage);
     generateAssets(primitivesPage, assetOutPutDir);
 
     if (debugConfig.withSuccessSound) playSystemSound('Glass');
 
     endOfPlugin();
-
   } catch (e) {
-    console.error (`
-      😿 😿 😿 😿 😿 😿 😿 😿 😿
-      ${e}
-      😿 😿 😿 😿 😿 😿 😿 😿 😿
-    `);
+    console.error('😿 😿 😿 😿 😿 😿 😿 😿 😿\n', e, '\n😿 😿 😿 😿 😿 😿 😿 😿 😿');
 
     if (debugConfig.withFailureSound) playSystemSound('Basso');
     throw e;

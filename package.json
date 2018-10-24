@@ -19,7 +19,7 @@
     "postinstall": "npm run build && skpm-link",
     "lint": "itp-react-scripts lint",
     "lint:fix": "npm run lint -- --fix",
-    "format": "itp-react-scripts format src/*/** --write",
+    "format": "itp-react-scripts format \"src/**/*.js\" --write",
     "test": "skpm-test",
     "log": "skpm log -f"
   },
