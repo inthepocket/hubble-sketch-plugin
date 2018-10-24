@@ -1,15 +1,14 @@
 import { Document } from 'sketch/dom';
 import sketchxport from '../sketchxport';
 
-const pathToMockSketchFile =
-'ABSOLUTE_PATH_TO_SKETCH_FILE.sketch';
+const pathToMockSketchFile = 'ABSOLUTE_PATH_TO_SKETCH_FILE.sketch';
 
 // console.log("__dirname", __dirname);
 console.log(pathToMockSketchFile);
 
-Document.open(pathToMockSketchFile, (err) => {
+Document.open(pathToMockSketchFile, err => {
   if (err) throw err;
-  test('run sketchxport-plugin', (context) => {
+  test('run sketchxport-plugin', context => {
     sketchxport(context);
 
     // const page = document.selectedPage;
