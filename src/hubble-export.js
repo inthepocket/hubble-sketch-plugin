@@ -17,7 +17,7 @@ export default function(context) {
   const { doc, documentSetting, filePath } = sketchConfig(context);
 
   if (!documentSetting) {
-    return sketchAlert("🤔 Seems like this document isn't properly configured yet. Please configure the plugin first using Plugins > Sketchxport > Configure Sketchxport");
+    return sketchAlert("🤔 Seems like this document isn't properly configured yet. Please configure the plugin first using Plugins > Hubble > Configure Hubble");
   }
 
   try {
@@ -31,12 +31,12 @@ export default function(context) {
       throw new Error('The document should contain pages...');
     }
 
-    execSync(`/usr/bin/open sketchxport://init?filePath=${filePath}&project=${documentSetting}`);
+    execSync(`/usr/bin/open hubble://init?filePath=${filePath}&project=${documentSetting}`);
 
     if (debugConfig.withSuccessSound) playSystemSound('Glass');
 
     endOfPlugin();
-    return sketchAlert("Sketchxport export successfull!");
+    return sketchAlert("Hubble export successfull!");
   } catch (e) {
     sketchAlert(`😿 An error occured while trying to export: ${e}`);
     console.error(`

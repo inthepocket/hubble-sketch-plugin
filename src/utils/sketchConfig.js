@@ -18,5 +18,5 @@ export default context => ({
     return this.doc.path;
   },
 
-  documentSettingsKey: 'sketchxport-project-id',
+  documentSettingsKey: 'hubble-project-id',
 });

@@ -1,13 +1,13 @@
 {
-  "name": "sketchxport-plugin",
+  "name": "hubble-sketch-plugin",
   "version": "0.1.0",
   "engines": {
     "sketch": ">=3.0"
   },
   "skpm": {
-    "name": "sketchxport-plugin",
+    "name": "hubble-sketch-plugin",
     "manifest": "src/manifest.json",
-    "main": "sketchxport-plugin.sketchplugin",
+    "main": "hubble-sketch-plugin.sketchplugin",
     "assets": [
       "assets/**/*"
     ]
