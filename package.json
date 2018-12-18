@@ -12,6 +12,10 @@
       "assets/**/*"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inthepocket/hubble-sketch-plugin"
+  },
   "scripts": {
     "build": "skpm-build",
     "watch": "skpm-build --watch",
@@ -21,7 +25,10 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "itp-react-scripts format \"src/**/*.js\" --write",
     "test": "skpm-test",
-    "log": "skpm log -f"
+    "log": "skpm log -f",
+    "release:patch": "skpm publish patch",
+    "release:minor": "skpm publish minor",
+    "release:major": "skpm publish major"
   },
   "devDependencies": {
     "@inthepocket/itp-react-scripts": "^0.47.1",
