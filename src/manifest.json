@@ -20,7 +20,7 @@
     }
   ],
   "menu": {
-    "title": "Hubble",
+    "title": "🔭 Hubble",
     "items": [
       "hubble-configure",
       "hubble-export",
