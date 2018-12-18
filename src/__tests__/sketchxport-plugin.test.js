@@ -1,5 +1,5 @@
 import { Document } from 'sketch/dom';
-import sketchxport from '../sketchxport';
+import hubble from '../hubble';
 
 const pathToMockSketchFile = 'ABSOLUTE_PATH_TO_SKETCH_FILE.sketch';
 
@@ -8,8 +8,8 @@ console.log(pathToMockSketchFile);
 
 Document.open(pathToMockSketchFile, err => {
   if (err) throw err;
-  test('run sketchxport-plugin', context => {
-    sketchxport(context);
+  test('run hubble-plugin', context => {
+    hubble(context);
 
     // const page = document.selectedPage;
 

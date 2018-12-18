@@ -11,7 +11,7 @@ export default function(context) {
     );
   }
 
-  const projectName = sketchPrompt("What's the project name:", 'my-cool-sketchxport-project');
+  const projectName = sketchPrompt("What's the project name:", 'my-cool-hubble-project');
 
   // The user cancelled the input
   if (projectName === 'null') return; // eslint-disable-line
@@ -21,9 +21,9 @@ export default function(context) {
   } catch (err) {
     console.error(err);
     return sketchAlert(
-      `Oh no, something went wrong when trying to set up Sketchxport for this document: ${e}`,
+      `Oh no, something went wrong when trying to set up Hubble for this document: ${err}`,
     );
   }
 
-  return sketchAlert(`🤚 High Five! You've set up Sketchxport for this Sketch document.`);
+  return sketchAlert(`🤚 High Five! You've set up Hubble for this Sketch document.`);
 }

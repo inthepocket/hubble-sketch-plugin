@@ -1,25 +1,27 @@
-<p align="center">
-  <h1 align="center">💎 sketchxport-plugin</h1>
+<div align="center">
+  <h1 align="center">🔭 hubble-sketch-plugin</h1>
 
-  <p align="center">
+  <img src="assets/icon.png" alt="Hubble logo" />
+
+  <p>
     <a href='./LICENSE'>
       <img src="https://badgen.net/badge/license/MIT/blue" alt="MIT License">
     </a>
     <img src="https://badgen.net/badge/platform/macOS?icon=apple" alt="" />
-    <a href="https://github.com/inthepocket/sketchxport-plugin/releases">
-      <img src="https://badgen.net/github/releases/inthepocket/sketchxport-plugin" />
+    <a href="https://github.com/inthepocket/hubble-sketch-plugin/releases">
+      <img src="https://badgen.net/github/releases/inthepocket/hubble-sketch-plugin" />
     </a>
-    <img src="https://badgen.net/github/last-commit/inthepocket/sketchxport-plugin" />
+    <img src="https://badgen.net/github/last-commit/inthepocket/hubble-sketch-plugin" />
   </p>
 
-<p align="center">
+  <p>
     Export configuration data like colors, fonts & text styles out of sketch to a universally parseable JSON format.<br/>
     This repository is an attempt to further automate design systems & tooling at In The Pocket.<br/>
     <br/>
     Assets can also be exported as platform-friendly PNG & SVG formats.
     [👷‍♀️UNDER CONSTRUCTION👷‍♂️]
   </p>
-</p>
+</div>
 
 # 👉 Prerequisites
 

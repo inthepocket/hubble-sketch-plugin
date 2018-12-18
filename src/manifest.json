@@ -4,27 +4,27 @@
   "icon": "icon.png",
   "commands": [
     {
-      "name": "Configure Sketchxport",
-      "identifier": "sketchxport-configure",
-      "script": "./sketchxport-configure.js"
+      "name": "Configure Hubble",
+      "identifier": "hubble-configure",
+      "script": "./hubble-configure.js"
     },
     {
-      "name": "Export to Sketchxport",
-      "identifier": "sketchxport-export",
-      "script": "./sketchxport-export.js"
+      "name": "Export to Hubble App",
+      "identifier": "hubble-export",
+      "script": "./hubble-export.js"
     },
     {
       "name": "Reset document configuration",
-      "identifier": "sketchxport-clear",
-      "script": "./sketchxport-clear.js"
+      "identifier": "hubble-clear",
+      "script": "./hubble-clear.js"
     }
   ],
   "menu": {
-    "title": "Sketchxport",
+    "title": "🔭 Hubble",
     "items": [
-      "sketchxport-configure",
-      "sketchxport-export",
-      "sketchxport-clear"
+      "hubble-configure",
+      "hubble-export",
+      "hubble-clear"
     ]
   }
 }
