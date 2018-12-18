@@ -21,7 +21,7 @@ export default function(context) {
   }
 
   try {
-    sketchAlert('🙌 Aaight, we catch your drift and start exporting.');
+    sketchAlert(`🙌 Aaight, we catch your drift and start exporting for project ${documentSetting}.`);
 
     if (!context) {
       throw new Error('Plugin did not receive context');
@@ -31,7 +31,8 @@ export default function(context) {
       throw new Error('The document should contain pages...');
     }
 
-    execSync(`/usr/bin/open hubble://init?filePath=${filePath}&project=${documentSetting}`);
+    const PROTOCOL_URL = `hubble://init?filePath=${filePath}&project=`+`documentSetting`;
+    execSync(`/usr/bin/open "${PROTOCOL_URL}"`);
 
     if (debugConfig.withSuccessSound) playSystemSound('Glass');
 
