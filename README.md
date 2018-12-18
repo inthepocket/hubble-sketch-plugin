@@ -26,7 +26,7 @@
 # 👉 Prerequisites
 
 - macOS with Sketch 41+
-- [Hubble.app](github.com/inthepocket/hubble-app) installed
+- [Hubble.app](https://github.com/inthepocket/hubble-app) installed
 
 ## 🛠 Development
 
