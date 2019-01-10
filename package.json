@@ -1,7 +1,7 @@
 {
   "name": "hubble-sketch-plugin",
   "description": "A Sketch plugin to extract assets and primitives and send them to Hubble.app",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "engines": {
     "sketch": ">=3.0"
   },
