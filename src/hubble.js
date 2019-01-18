@@ -17,7 +17,7 @@ export default function(context) {
   const { doc, primitivesPage, assetOutPutDir } = sketchConfig(context);
 
   try {
-    sketchAlert('Aaight, we catch your drift and start exporting. 🙌');
+    sketchAlert('🔭 Starting export to Hubble.app (make sure the application is open)');
     if (!context) {
       throw new Error('Plugin should have context');
     }
@@ -25,8 +25,6 @@ export default function(context) {
     if (!doc && !doc.pages) {
       throw new Error('The doc should have pages..');
     }
-
-    // const sharedStyle = doc.getSharedTextStyles();
 
     generateConfig(primitivesPage);
     generateAssets(primitivesPage, assetOutPutDir);
