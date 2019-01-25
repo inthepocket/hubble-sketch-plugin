@@ -30,7 +30,7 @@
       "hubble-configure",
       "hubble-export",
       "hubble-clear",
-      "hubble-validate",
+      "hubble-validate"
     ]
   }
 }

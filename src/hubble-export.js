@@ -16,6 +16,10 @@ export default function(context) {
 
   const { doc, documentSetting, filePath } = sketchConfig(context);
 
+  if (!filePath) {
+    return sketchAlert('This file is not saved, please make sure you save the file before tying to export to Hubble.app');
+  }
+
   if (!documentSetting) {
     return sketchAlert("🤔 Seems like this document isn't properly configured yet. Please configure the plugin first using Plugins > Hubble > Configure Hubble");
   }
