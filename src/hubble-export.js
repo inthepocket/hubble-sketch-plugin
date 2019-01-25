@@ -1,4 +1,3 @@
-// documentation: https://developer.sketchapp.com/reference/api/
 import { execSync } from '@skpm/child_process';
 
 import { startOfPlugin, endOfPlugin } from './utils/debug';
@@ -35,7 +34,7 @@ export default function(context) {
       throw new Error('The document should contain pages...');
     }
 
-    const PROTOCOL_URL = `hubble://init?filePath=${filePath}&project=`+`documentSetting`;
+    const PROTOCOL_URL = `hubble://init?filePath=${filePath}&project=${documentSetting}`;
     execSync(`/usr/bin/open "${PROTOCOL_URL}"`);
 
     if (debugConfig.withSuccessSound) playSystemSound('Glass');
