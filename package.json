@@ -27,6 +27,7 @@
     "format": "itp-react-scripts format \"src/**/*.js\" --write",
     "test": "skpm-test",
     "log": "skpm log -f",
+    "install:plugin": "npm run build && open hubble-sketch-plugin.sketchplugin",
     "release:patch": "skpm publish patch",
     "release:minor": "skpm publish minor",
     "release:major": "skpm publish major"
