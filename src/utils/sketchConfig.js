@@ -1,22 +1,41 @@
 import sketch from 'sketch';
 
-export const sketchAlert = message => sketch.UI.message(message);
+export const sketchAlert = (message, disappear = true) => disappear ? sketch.UI.message(message) : sketch.UI.alert('🔭 Hubble', message);
 export const sketchPrompt = (message, defaultValue) => sketch.UI.getStringFromUser(message, defaultValue);
 export const sketchInput = (message, options) => sketch.UI.getSelectionFromUser(message, options);
 
 export default context => ({
+  /**
+   * Return the Document object.
+   */
   get doc() {
     return sketch.fromNative(context.document);
   },
 
+  /**
+   * Return the document setting (project id) stored in this file.
+   */
   get documentSetting() {
     const val = sketch.Settings.documentSettingForKey(this.doc, this.documentSettingsKey);
     return !val || val === 'null' ? false : val;
   },
 
+  /**
+   * Return the absolute path to where this file is stored on disk.
+   */
   get filePath() {
     return this.doc.path;
   },
 
+  /**
+   * Return the primitives page if it exists
+   */
+  get primitivesPage() {
+    return this.doc.pages.find(i => (i.name && i.name.toLowerCase() === 'primitives'));
+  },
+
+  /**
+   * Identifier for storing the document setting (project id) in this file.
+   */
   documentSettingsKey: 'hubble-project-id',
 });

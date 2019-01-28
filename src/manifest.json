@@ -17,6 +17,11 @@
       "name": "Reset document configuration",
       "identifier": "hubble-clear",
       "script": "./hubble-clear.js"
+    },
+    {
+      "name": "Validate document",
+      "identifier": "hubble-validate",
+      "script": "./hubble-validate.js"
     }
   ],
   "menu": {
@@ -24,7 +29,8 @@
     "items": [
       "hubble-configure",
       "hubble-export",
-      "hubble-clear"
+      "hubble-clear",
+      "hubble-validate"
     ]
   }
 }
