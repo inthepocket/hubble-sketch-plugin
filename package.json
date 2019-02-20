@@ -1,7 +1,22 @@
 {
   "name": "hubble-sketch-plugin",
-  "description": "A Sketch plugin to extract assets and primitives and send them to Hubble.app",
+  "description": "Sketch Plugin to couple your Sketch file to the Hubble Design System.",
   "version": "1.0.0",
+  "homepage": "https://hubble-design-system.netlify.com",
+  "repository": "inthepocket/hubble-sketch-plugin",
+  "author": "In The Pocket",
+  "maintainers": [
+    "Jonathan Dierckens <jonathan.dierckens@inthepocket.mobi>",
+    "Thibault Maekelbergh <thibault.maekelbergh@icloud.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "hubble",
+    "hubble-sketch-plugin",
+    "hubble-oss",
+    "hubble-design-system",
+    "inthepocket"
+  ],
   "engines": {
     "sketch": ">=3.0"
   },
@@ -12,10 +27,6 @@
     "assets": [
       "assets/**/*"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/inthepocket/hubble-sketch-plugin"
   },
   "scripts": {
     "build": "skpm-build",
@@ -38,10 +49,6 @@
     "@skpm/test-runner": "^0.3.3",
     "eslint": "^5.7.0"
   },
-  "contributors": [
-    "Jonathan Dierckens <jonathan.dierckens@inthepocket.mobi>",
-    "Thibault Maekelbergh <thibault.maekelbergh@icloud.com>"
-  ],
   "dependencies": {
     "@skpm/child_process": "^0.2.4",
     "sketch": ".",
