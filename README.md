@@ -32,7 +32,13 @@ hubble-sketch-plugin can also be installed using [Sketch Runner][sketch runner].
 
 # Usage
 
-Check out the [detailed documentation][wiki] on how to use hubble-sketch-plugin together with the Hubble ecosystem.
+After the installation, the Hubble will be available in your plugin list. You should first configure your document and enter a unique identifier for your project.
+
+![Configure Document using plugin][screenshot configure document]
+
+This will store the identifier for this project in the Sketch file directly. After this you can start exporting your data to Hubble.app!
+
+Check out the [detailed documentation][wiki] for more info on how to use hubble-sketch-plugin together with the Hubble ecosystem.
 
 # Contributing
 
@@ -74,7 +80,7 @@ For more on running in development mode, check the [wiki]
 [MIT][license]
 
 <!-- LINKS -->
-[hubble homepage]: https://hubble-design-systems.netlify.com
+[hubble homepage]: https://hubble-design-system.netlify.com
 [hubble app repo]: https://github.com/inthepocket/hubble-app
 
 [logo]: https://github.com/inthepocket/hubble-sketch-plugin/blob/master/.github/hubble-sketch-plugin-banner.png
@@ -87,3 +93,5 @@ For more on running in development mode, check the [wiki]
 [sketch runner]: https://sketchrunner.com/
 [sketch js api]: https://developer.sketchapp.com/reference/api/
 [skpm repo]: https://github.com/skpm/skpm/blob/master/README.md
+
+[screenshot configure document]: https://github.com/inthepocket/hubble-sketch-plugin/wiki/assets/configure-sketch-document.png
