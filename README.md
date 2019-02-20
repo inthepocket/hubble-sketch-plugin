@@ -5,6 +5,7 @@
 [![Releases](https://badgen.net/github/releases/inthepocket/hubble-sketch-plugin)][releases]
 ![Last commit](https://badgen.net/github/last-commit/inthepocket/hubble-sketch-plugin)
 [![Latest release](https://badgen.net/github/release/inthepocket/hubble-sketch-plugin/stable)][latest release]
+[![CI Status](https://badgen.net/travis/inthepocket/hubble-sketch-plugin)][travis]
 [![Sketch Runner](https://badgen.net/badge/Sketch%20Runner/Compatible/green)][sketch runner]
 
 > Sketch Plugin to couple your Sketch file to the [Hubble Design System][hubble homepage].
