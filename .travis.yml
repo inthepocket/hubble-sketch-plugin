@@ -1,13 +1,16 @@
-language: node_js
+matrix:
+  include:
+    - language: nodejs
+      node_js:
+        - '8'
+      install:
+        - npm ci --ignore-scripts
+      script:
+        - npm run lint
 
-node_js:
-  - '8'
-
-install:
-  - npm ci --ignore-scripts
-
-script:
-  - npm run lint
+    - language: ruby
+      before_script: gem install awesome_bot
+      script: awesome_bot README.md --allow-redirect --allow-dupe
 
 notifications:
   slack:
