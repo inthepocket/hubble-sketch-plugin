@@ -51,7 +51,6 @@
   },
   "dependencies": {
     "@skpm/child_process": "^0.2.4",
-    "sketch": ".",
     "sketch-utils": "^0.2.8"
   }
 }
