@@ -29,11 +29,17 @@ Takes your design data out of Sketch and connects it to the Hubble atmosphere.
 
 The easiest way to install is to download [one of the releases][releases] and install the plugin in Sketch. Once installed the plugin can be automatically updated through the Sketch Plugin Manager.
 
-hubble-sketch-plugin can also be installed using [Sketch Runner][sketch runner].
+👉 [Download the latest release][latest release]
+
+![sketch plugin manager][screenshot plugin manager]
+
+hubble-sketch-plugin can also be installed using [Sketch Runner][sketch runner]:
+
+![install hubble via sketch runner][screenshot sketch runner]
 
 # Usage
 
-After the installation, the Hubble will be available in your plugin list. You should first configure your document and enter a unique identifier for your project.
+After the installation, the 🔭 Hubble plugin will be available in your plugin list. You should first configure your document and enter a unique identifier for your project.
 
 ![Configure Document using plugin][screenshot configure document]
 
@@ -96,3 +102,5 @@ For more on running in development mode, check the [wiki]
 [skpm repo]: https://github.com/skpm/skpm/blob/master/README.md
 
 [screenshot configure document]: https://github.com/inthepocket/hubble-sketch-plugin/wiki/assets/configure-sketch-document.png
+[screenshot sketch runner]: https://github.com/inthepocket/hubble-sketch-plugin/wiki/assets/sketch-runner.jpg
+[screenshot plugin manager]: https://github.com/inthepocket/hubble-sketch-plugin/wiki/assets/sketch-plugin.png
