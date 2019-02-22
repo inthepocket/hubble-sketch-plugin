@@ -3,7 +3,7 @@
   "description": "Sketch Plugin to couple your Sketch file to the Hubble Design System.",
   "version": "1.0.0",
   "homepage": "https://hubble-design-system.netlify.com",
-  "repository": "inthepocket/hubble-sketch-plugin",
+  "repository": "https://github.com/inthepocket/hubble-sketch-plugin",
   "author": "In The Pocket",
   "maintainers": [
     "Jonathan Dierckens <jonathan.dierckens@inthepocket.mobi>",
