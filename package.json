@@ -44,13 +44,13 @@
     "release:major": "skpm publish major"
   },
   "devDependencies": {
-    "@inthepocket/itp-react-scripts": "^0.47.1",
-    "@skpm/builder": "^0.5.2",
-    "@skpm/test-runner": "^0.3.3",
-    "eslint": "^5.7.0"
+    "@inthepocket/itp-react-scripts": "^0.48.1",
+    "@skpm/builder": "^0.5.14",
+    "@skpm/test-runner": "^0.3.10",
+    "eslint": "^5.14.1"
   },
   "dependencies": {
     "@skpm/child_process": "^0.2.4",
-    "sketch-utils": "^0.2.8"
+    "sketch-utils": "^0.2.9"
   }
 }
