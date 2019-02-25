@@ -96,6 +96,7 @@ For more on running in development mode, check the [wiki]
 [releases]: https://github.com/inthepocket/hubble-sketch-plugin/releases
 [latest release]: https://github.com/inthepocket/hubble-sketch-plugin/releases/latest
 [wiki]: https://github.com/inthepocket/hubble-sketch-plugin/wiki
+[travis]: https://travis-ci.org/inthepocket/hubble-sketch-plugin
 
 [sketch runner]: https://sketchrunner.com/
 [sketch js api]: https://developer.sketchapp.com/reference/api/
