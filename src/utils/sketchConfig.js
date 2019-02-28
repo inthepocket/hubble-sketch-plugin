@@ -14,10 +14,17 @@ export default context => ({
 
   /**
    * Return the document setting (project id) stored in this file.
+   * If a named artboard 'config/projectid' is configured we will use that instead.
    */
   get documentSetting() {
-    const val = sketch.Settings.documentSettingForKey(this.doc, this.documentSettingsKey);
-    return !val || val === 'null' ? false : val;
+    const fromDocument = sketch.Settings.documentSettingForKey(this.doc, this.documentSettingsKey);
+    const fromArtboard = this.primitivesPage.layers.find(layer => layer.name.toLowerCase() === 'config/projectid');
+
+    if (fromArtboard) {
+      return fromArtboard.layers[0].text;
+    }
+
+    return !fromDocument || fromDocument === 'null' ? false : fromDocument;
   },
 
   /**
