@@ -18,7 +18,7 @@ export default context => ({
    */
   get documentSetting() {
     const fromDocument = sketch.Settings.documentSettingForKey(this.doc, this.documentSettingsKey);
-    const fromArtboard = this.primitivesPage.layers.find(layer => layer.name.toLowerCase() === 'config/projectid');
+    const fromArtboard = this.primitivesPage && this.primitivesPage.layers.find(layer => layer.name.toLowerCase() === 'config/projectid');
 
     if (fromArtboard) {
       return fromArtboard.layers[0].text;
