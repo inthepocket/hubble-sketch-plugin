@@ -11,6 +11,7 @@
     {
       "name": "Export to Hubble App",
       "identifier": "hubble-export",
+      "shortcut": "cmd shift h",
       "script": "./hubble-export.js"
     },
     {
@@ -29,6 +30,7 @@
     "items": [
       "hubble-configure",
       "hubble-export",
+      "-",
       "hubble-clear",
       "hubble-validate"
     ]
