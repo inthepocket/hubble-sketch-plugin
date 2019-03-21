@@ -1,6 +1,7 @@
 import Settings from 'sketch/settings';
 
 import sketchConfig, { sketchInput, sketchAlert } from './utils/sketchConfig';
+import error from './utils/error';
 
 export default function(context) {
   // eslint-disable-next-line
@@ -16,8 +17,8 @@ export default function(context) {
     try {
       Settings.setDocumentSettingForKey(doc, documentSettingsKey, null);
     } catch (err) {
-      console.error(err);
-      sketchAlert(`😿 Configuration for this document could not be cleared: ${err}`);
+      error(err, '😿 Configuration for this document could not be cleared')
+      throw err;
     }
   }
 

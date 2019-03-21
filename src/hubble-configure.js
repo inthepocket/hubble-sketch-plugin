@@ -1,6 +1,7 @@
 import Settings from 'sketch/settings';
 
 import sketchConfig, { sketchPrompt, sketchAlert } from './utils/sketchConfig';
+import error from './utils/error';
 
 export default function(context) {
   const { doc, documentSettingsKey, documentSetting } = sketchConfig(context);
@@ -19,10 +20,8 @@ export default function(context) {
   try {
     Settings.setDocumentSettingForKey(doc, documentSettingsKey, projectName);
   } catch (err) {
-    console.error(err);
-    return sketchAlert(
-      `Oh no, something went wrong when trying to set up Hubble for this document: ${err}`,
-    );
+    error(err, 'Oh no, something went wrong when trying to set up Hubble for this document', true)
+    throw err;
   }
 
   return sketchAlert(`🤚 High Five! You've set up Hubble for this Sketch document.`);

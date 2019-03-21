@@ -7,8 +7,8 @@ export default function(context) {
   const { filePath, documentSetting, primitivesPage } = sketchConfig(context);
 
   if (!filePath) return sketchAlert(`This file is not saved`, false);
-  if (!documentSetting) return sketchAlert(`This file contains no project id.`, false);
   if (!primitivesPage) return sketchAlert('This file does not have a primitives page', false);
+  if (!documentSetting) return sketchAlert(`This file contains no project id.`, false);
 
   if (!primitivesPage.layers.find(i => i.type === 'Artboard')) {
     return sketchAlert('Your primitives page does not contain any artboards yet.', false)

@@ -1,8 +1,7 @@
 import { execSync } from '@skpm/child_process';
 
-import playSystemSound from './utils/playSystemSound';
 import sketchConfig, { sketchAlert } from './utils/sketchConfig';
-import config from './config';
+import error from './utils/error';
 
 /**
  * Open Hubble.app's protocol URL and parameterise the project id and filepath.
@@ -15,13 +14,9 @@ function exportToHubbleApp(filePath, documentSetting) {
     const PROTOCOL_URL = `hubble://init?filePath=${filePath}&project=${documentSetting}`;
     execSync(`/usr/bin/open "${PROTOCOL_URL}"`);
 
-    if (config.withSuccessSound) playSystemSound('Glass');
     return sketchAlert("🔭 Hubble export successfull!");
   } catch (err) {
-    if (config.withFailureSound) playSystemSound('Basso');
-
-    sketchAlert(`👽 An error occured while trying to export: ${err}`);
-    console.error('An error occured while trying to export', err);
+    error(err, '👽 An error occured while trying to export', true)
     throw err;
   }
 }
@@ -44,9 +39,7 @@ export default function(context) {
 
   return doc.save((err) => {
     if (err) {
-      if (config.withFailureSound) playSystemSound('Basso');
-      sketchAlert('👽 Could not save the document. Please try saving the file manually.\n\nIf the problem persists file an issue at https://github.com/inthepocket/hubble-sketch-plugin', false);
-      console.error('Could not save the document:', err);
+      error(err, '👽 Could not save the document. Please try saving the file manually.\n\nIf the problem persists file an issue at https://github.com/inthepocket/hubble-sketch-plugin', true);
     } else {
       exportToHubbleApp(filePath, documentSetting);
     }
