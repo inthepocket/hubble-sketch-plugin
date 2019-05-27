@@ -11,7 +11,7 @@
     {
       "name": "Export to Hubble App",
       "identifier": "hubble-export",
-      "shortcut": "cmd shift h",
+      "shortcut": "ctrl shift h",
       "script": "./hubble-export.js"
     },
     {
