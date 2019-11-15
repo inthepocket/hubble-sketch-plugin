@@ -18,7 +18,7 @@
     "inthepocket"
   ],
   "engines": {
-    "sketch": ">=3.0"
+    "sketch": ">=49.0"
   },
   "skpm": {
     "name": "hubble-sketch-plugin",
@@ -45,9 +45,9 @@
   },
   "devDependencies": {
     "@inthepocket/itp-react-scripts": "^0.48.1",
-    "@skpm/builder": "^0.5.14",
-    "@skpm/test-runner": "^0.3.10",
-    "eslint": "^5.14.1"
+    "@skpm/builder": "^0.7.4",
+    "eslint": "^5.14.1",
+    "skpm": "^1.3.1"
   },
   "dependencies": {
     "@skpm/child_process": "^0.2.4",
