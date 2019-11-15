@@ -11,7 +11,7 @@ function exportToHubbleApp(filePath, documentSetting) {
     sketchAlert(`✨ Opening Hubble.app and exporting tokens for project ${documentSetting}`);
 
     // TODO: check if Hubble.app open already, then open URL again.
-    const PROTOCOL_URL = `hubble://init?filePath=${filePath}&project=${documentSetting}`;
+    const PROTOCOL_URL = `hubble://init?filePath=${filePath}&project=${documentSetting}&app=SKETCH`;
     execSync(`/usr/bin/open "${PROTOCOL_URL}"`);
 
     return sketchAlert("🔭 Hubble export successfull!");
