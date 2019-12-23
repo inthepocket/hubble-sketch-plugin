@@ -14,6 +14,8 @@ Takes your design data out of Sketch and connects it to the Hubble atmosphere.
 
 # Contents
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/inthepocket/hubble-sketch-plugin.svg)](https://greenkeeper.io/)
+
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
 - [Usage](#usage)
