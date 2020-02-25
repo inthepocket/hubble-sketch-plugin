@@ -1,4 +1,4 @@
-![Hubble Scripts Logo][logo]
+![Hubble OSS Banner][oss banner]
 
 [![LICENSE](https://badgen.net/badge/license/MIT/blue)][license]
 ![Platform](https://badgen.net/badge/platform/macOS?icon=apple)
@@ -7,6 +7,8 @@
 [![Latest release](https://badgen.net/github/release/inthepocket/hubble-sketch-plugin/stable)][latest release]
 [![CI Status](https://badgen.net/travis/inthepocket/hubble-sketch-plugin)][travis]
 [![Sketch Runner](https://badgen.net/badge/Sketch%20Runner/Compatible/green)][sketch runner]
+
+# Hubble Sketch Plugin
 
 > Sketch Plugin to couple your Sketch file to the [Hubble Design System][hubble homepage].
 
@@ -90,7 +92,7 @@ For more on running in development mode, check the [wiki]
 [hubble homepage]: https://hubble-design-system.netlify.com
 [hubble app repo]: https://github.com/inthepocket/hubble-app
 
-[logo]: https://github.com/inthepocket/hubble-sketch-plugin/blob/master/.github/hubble-sketch-plugin-banner.png
+[oss banner]: https://github.com/inthepocket/hubble-sketch-plugin/blob/master/.github/hubble-oss-banner.png
 [license]: https://github.com/inthepocket/hubble-sketch-plugin/blob/master/LICENSE
 [contributing]: https://github.com/inthepocket/hubble-sketch-plugin/blob/master/CONTRIBUTING.md
 [releases]: https://github.com/inthepocket/hubble-sketch-plugin/releases
