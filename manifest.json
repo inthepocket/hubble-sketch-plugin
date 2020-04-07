@@ -1,0 +1,25 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Validate document",
+      "identifier": "hubble-validate",
+      "script": "./dist/hubble-validate.js"
+    },
+    {
+      "name": "Export to Hubble App",
+      "identifier": "hubble-export",
+      "shortcut": "ctrl shift h",
+      "script": "./dist/hubble-export.js"
+    }
+  ],
+  "menu": {
+    "title": "🛰 Hubble",
+    "items": [
+      "hubble-validate",
+      "hubble-export"
+    ]
+  }
+}
